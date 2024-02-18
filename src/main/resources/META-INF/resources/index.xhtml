@@ -19,7 +19,10 @@
 
 <h:body>
     <h1>Olá, JSF! #{testBean.name}</h1>
-    <p:spinner />
+    <h:form>
+        <h:outputText value="#{testBean.number}" id="contador" />
+        <p:poll interval="2" update="contador" listenner="#{testBean.incrementNumber()}" />
+    </h:form>
 
 </h:body>
 
